@@ -49,10 +49,21 @@
     border: 1px solid #ccc;
     padding: 20px;
     text-align: center;
+    background-color: #EEEEEE;
 }
 
 .list-item strong {
     display: block;
     margin-top: 10px;
     font-weight: bold;
+}
+
+@media screen and (max-width: 768px) {
+    .list-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); /* Зменшити розмір блоків для екранів шириною менше 768px */
+    }
+
+    .list-item {
+        padding: 10px; /* Зменшити відступи для екранів шириною менше 768px */
+    }
 }
