@@ -964,16 +964,15 @@
           const addressCabinet = document.createElement('p');
           addressCabinet.textContent = `${doctor.address}, кабінет ${doctor.cabinet}`;
 
-         // Add the created elements to the parent element
+          // Add the created elements to the parent element
           listItem.appendChild(img);
           listItem.appendChild(fullName);
           listItem.appendChild(speciality);
           listItem.appendChild(addressCabinet);
 
           container.appendChild(listItem); // Add the created elements to the page
-
-          const script = document.createElement('script');
-          script.src = 'pagination.js';
-          document.body.appendChild(script);
       });
+      const script = document.createElement('script');
+      script.src = 'pagination.js';
+      document.body.appendChild(script);
   });
