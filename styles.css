@@ -143,3 +143,119 @@ body {
     width: 600px;
     height: 100%;
 }
+
+/* Search controls */
+
+.search-container {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-filter-container {
+    margin-right: 20px;
+}
+
+.search-filter-container label {
+    margin-right: 5px;
+}
+
+.search-input-container {
+    display: flex;
+    align-items: center;
+}
+
+.search-input-container input[type="text"],
+.search-input-container button {
+    border-radius: 10px;
+}
+
+.search-input-container input[type="text"] {
+    padding: 10px;
+    margin-right: 5px;
+    width: 250px;
+    max-width: 250px;
+    border: 2px solid #333652;
+}
+
+.search-input-container button {
+    padding: 10px 15px;
+    background-color: #FAD02C;
+    color: black;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    font-size: 14px;
+    margin: 0 10px;
+}
+
+/* Стилізація селекта */
+.search-filter-container select {
+    padding: 10px;
+    border-radius: 10px;
+    appearance: none;
+    background-color: #fff;
+    border: 2px solid #333652;
+    cursor: pointer;
+    width: 250px; /* збільшити розмір селекта */
+}
+
+/* Стилі при наведенні на селект */
+.search-filter-container select:hover {
+    border-color: #555;
+}
+
+/* Стилі при фокусі на селекті */
+.search-filter-container select:focus {
+    outline: none;
+    border-color: #333652;
+    box-shadow: 0 0 5px rgba(51, 54, 82, 0.5);
+}
+
+/* Стилізація елементів випадаючого списку */
+select#filter-select option {
+    background-color: #fff;
+    color: black;
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+    cursor: pointer;
+    border-radius: 15px;
+}
+
+/* Стилізація останнього елемента випадаючого списку */
+select#filter-select option:last-child {
+    border-bottom: none;
+}
+
+
+
+@media screen and (max-width: 865px) {
+    .search-container {
+        flex-direction: column; /* Зміна напрямку контейнера на вертикальний */
+        align-items: stretch; /* Розтягнення елементів по ширині контейнера */
+    }
+
+    .search-filter-container {
+        margin-bottom: 10px; /* Додатковий відступ між блоками пошуку і фільтра */
+    }
+
+    .search-input-container {
+        flex-direction: column; /* Зміна напрямку контейнера для інпуту та кнопок на вертикальний */
+    }
+
+    .search-input-container input[type="text"] {
+        margin-right: 0;
+        width: 100%; 
+        max-width: 100%;
+    }
+
+    .search-input-container button {
+        margin: 10px 0 0 0; /* Зміна відступів для кнопок на малих екранах */
+    }
+
+    .search-filter-container select {
+        width: 100%; 
+        max-width: 100%;
+    }
+}

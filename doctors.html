@@ -27,6 +27,19 @@
             <a href="contacts.html">Контакти</a>
         </div>
         <div class="main-content">
+            <div class="search-container">
+                <div class="search-filter-container">
+                    <select id="filter-select">
+                        <option value="" selected disabled hidden>Лікарська практика...</option>
+                        <!-- dynamicly inserted -->
+                    </select>
+                </div>
+                <div class="search-input-container">
+                    <input type="text" id="search-input" placeholder="Пошук за прізвищем...">
+                    <button id="search-button">Пошук</button>
+                    <button id="reset-button">Скинути</button>
+                </div>
+            </div>
             <div class="list-container" id="paginated-list" aria-live="polite">
                 <!-- data from importDoctors.js -->
             </div>
