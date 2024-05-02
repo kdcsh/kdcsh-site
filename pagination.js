@@ -131,6 +131,7 @@ const searchInput = document.getElementById("search-input");
 const filterSelect = document.getElementById("filter-select");
 const searchButton = document.getElementById("search-button");
 const resetButton = document.getElementById("reset-button");
+const noResultsMessContainer = document.getElementById("no-results-message");
 
 // Get unique values ​​of professions
 const professions = Array.from(new Set(doctorsData.map(doctor => doctor.speciality)))
@@ -149,35 +150,45 @@ professions.forEach(profession => {
 // Update the list of doctors on the page
 const renderDoctors = (doctors) => {
   paginatedList.innerHTML = ""; // Clearing the current list before updating
+  noResultsMessContainer.innerHTML = "";
 
-  doctors.forEach(doctor => {
-    // Create HTML elements
-    const listItem = document.createElement('div');
-    listItem.classList.add('list-item');
+  if (doctors.length === 0) {
+    const noResultsMessage = document.createElement('p');
+    noResultsMessage.textContent = "Результатів не знайдено";
+    noResultsMessage.style.textAlign = "center";
+    noResultsMessage.style.marginTop = "40px";
+    noResultsMessage.style.fontSize = "20px";
+    noResultsMessContainer.appendChild(noResultsMessage);
+  } else {
+    doctors.forEach(doctor => {
+      // Create HTML elements
+      const listItem = document.createElement('div');
+      listItem.classList.add('list-item');
 
-    const img = document.createElement('img');
-    img.src = 'src/doctor.svg';
-    img.alt = 'Doctor Icon';
-    img.width = 100;
-    img.height = 100;
+      const img = document.createElement('img');
+      img.src = 'src/doctor.svg';
+      img.alt = 'Doctor Icon';
+      img.width = 100;
+      img.height = 100;
 
-    const fullName = document.createElement('p');
-    fullName.textContent = doctor.fullName;
+      const fullName = document.createElement('p');
+      fullName.textContent = doctor.fullName;
 
-    const speciality = document.createElement('strong');
-    speciality.textContent = doctor.speciality;
+      const speciality = document.createElement('strong');
+      speciality.textContent = doctor.speciality;
 
-    const addressCabinet = document.createElement('p');
-    addressCabinet.textContent = `${doctor.address}, кабінет ${doctor.cabinet}`;
+      const addressCabinet = document.createElement('p');
+      addressCabinet.textContent = `${doctor.address}, кабінет ${doctor.cabinet}`;
 
-    // Add the created elements to the parent element
-    listItem.appendChild(img);
-    listItem.appendChild(fullName);
-    listItem.appendChild(speciality);
-    listItem.appendChild(addressCabinet);
+      // Add the created elements to the parent element
+      listItem.appendChild(img);
+      listItem.appendChild(fullName);
+      listItem.appendChild(speciality);
+      listItem.appendChild(addressCabinet);
 
-    paginatedList.appendChild(listItem); // Add the created elements to the page
-  });
+      paginatedList.appendChild(listItem); // Add the created elements to the page
+    });
+  }
 };
 
 searchButton.addEventListener("click", () => {
