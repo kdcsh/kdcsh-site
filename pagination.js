@@ -91,13 +91,10 @@ const handlePrevButtonClick = (pageCount, listItems) => {
 
 const handleNextButtonClick = (pageCount, listItems) => {
   setCurrentPage(currentPage + 1, pageCount, listItems);
-  console.log("NextButt/CurrentPage: ", currentPage);
 }
 
 const handlePaginationNumberClick = (pageIndex, pageCount, listItems) => {
   setCurrentPage(pageIndex, pageCount, listItems);
-  console.log("PaginationNumber/pageIndex: ", pageIndex);
-
 }
 
 const paginate = () => {
@@ -136,7 +133,10 @@ const searchButton = document.getElementById("search-button");
 const resetButton = document.getElementById("reset-button");
 
 // Get unique values ​​of professions
-const professions = Array.from(new Set(doctorsData.map(doctor => doctor.speciality)));
+const professions = Array.from(new Set(doctorsData.map(doctor => doctor.speciality)))
+  .sort((a, b) => a.localeCompare(b, 'en', {
+    ignorePunctuation: true
+  }));
 
 // Add options to the drop-down list
 professions.forEach(profession => {
