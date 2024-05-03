@@ -25,27 +25,31 @@ body {
 .top-bar {
     background-color: transparent;
     color: #FAD02C;
-    font-size: 16pt;
+    font-size: 15pt;
     text-align: left;
     padding: 20px 0;
     overflow: hidden;
-    height: auto;
+    height: 60px;
+    position: relative;
 }
 
 .top-bar-logo {
     margin-left: 20px;
     height: 60px;
+    position: absolute;
+    top: 50%;
+    margin-top: -30px;
 }
 
 .top-bar-text {
-    display: inline-block;
-    max-width: 80%;
     overflow: hidden;
     text-overflow: ellipsis;
-    margin: 0;
+    margin: -15px 0 0 80px;
     padding-left: 10px;
     font-weight: bold;
     white-space: normal;
+    position: absolute;
+    top: 50%;
 }
 
 .banner {
@@ -100,7 +104,6 @@ body {
     color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
 }
 
 .footer-content {
@@ -126,7 +129,19 @@ body {
         flex: none;
         width: 100%;
     }
+
+    .top-bar-text {
+        font-size: 14px;
+    }
 }
+
+@media screen and (max-width: 400px) {
+    .top-bar-text {
+        font-size: 11px;
+        max-width: -30px;
+    }
+}
+
 
 .map-container {
     position: relative;
