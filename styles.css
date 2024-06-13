@@ -100,6 +100,7 @@ body {
     text-align: justify;
     text-indent: 2em;
     padding: 0 15px;
+    background-color: white;
 }
 
 .footer {
@@ -553,4 +554,115 @@ background-color: #f9f9f9;
 }
 .info-card a:hover {
     text-decoration: underline;
+}
+
+
+.content-container {
+    padding: 20px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    margin-bottom: 30px;
+}
+
+.content-container h2, .content-container h3 {
+    color: #333;
+    margin-top: 30px;
+    font-size: 24px;
+}
+
+.content-container p, .content-container ul li {
+    font-size: 16px;
+    color: #555;
+}
+
+.content-container a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.content-container a:hover {
+    text-decoration: underline;
+}
+
+.card-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 30px 0;
+}
+
+.card {
+    background-color: #F5F5F5;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    flex: 1 1 calc(25% - 40px);
+    box-sizing: border-box;
+    text-align: center;
+}
+
+.card:hover {
+    background-color: #EEEEEE;
+}
+
+.card p {
+    margin: 0;
+    color: #555;
+}
+
+.rehab-photos, .gyn-photos, .colposcopy-photos, .radiology-photos, .day-hospital-photos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.rehab-photos img, .gyn-photos img, .colposcopy-photos img, .radiology-photos img, .day-hospital-photos img {
+    width: calc(33.333% - 20px);
+    height: 350px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.special-card {
+    background-color: #333652;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.special-card:hover {
+    background-color: #595d80;
+}
+
+.special-card p {
+    color: white;
+}
+
+
+@media screen and (max-width: 768px) {
+    .rehab-photos img, .gyn-photos img, .colposcopy-photos img, .radiology-photos img, .day-hospital-photos img {
+        width: calc(50% - 20px);
+        height: 300px;
+    }
+
+    .card {
+        flex: 1 1 calc(50% - 40px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .rehab-photos img, .gyn-photos img, .colposcopy-photos img, .radiology-photos img, .day-hospital-photos img {
+        width: 100%;
+        height: 250px;
+    }
+
+    .card {
+        flex: 1 1 100%;
+    }
 }
