@@ -666,3 +666,24 @@ background-color: #f9f9f9;
         flex: 1 1 100%;
     }
 }
+
+
+.video-section {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.video-section video {
+    border-radius: 30px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 640px;
+    height: 360px;
+}
+
+@media (max-width: 805px) {
+    .video-section video {
+        width: 80%;
+        max-width: none;
+        height: auto;
+    }
+}
