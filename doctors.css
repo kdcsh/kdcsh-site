@@ -14,7 +14,7 @@
  .pagination-button {
      font-size: 1.1rem;
      background-color: transparent;
-     border: none;
+     border: 1px solid #333652;
      margin: 0.25rem 0.25rem;
      cursor: pointer;
      height: 2.5rem;
@@ -28,7 +28,7 @@
  }
 
  .pagination-number.active {
-     background: #FAD02C;
+     background: #ffcc00;
  }
 
  /*  */
