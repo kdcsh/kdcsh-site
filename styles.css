@@ -70,7 +70,7 @@ body {
 }
 
 .navbar {
-    background-color: #00264d;
+    background-color: #333652;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -112,7 +112,7 @@ body {
     text-align: center;
     font-size: 10pt;
     padding: 20px;
-    background-color: #00264d;
+    background-color: #333652;
     color: white;
     display: grid;
     grid-template-columns: repeat(2, 1fr);
