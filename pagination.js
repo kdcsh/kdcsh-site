@@ -1,10 +1,6 @@
-// 
-// 
-//
+"use strict";
+
 // Pagination
-// 
-// 
-// 
 
 const paginationNumbers = document.getElementById("pagination-numbers");
 const paginatedList = document.getElementById("paginated-list");
@@ -44,7 +40,7 @@ const handleActivePageNumber = () => {
   document.querySelectorAll(".pagination-number").forEach((button) => {
     button.classList.remove("active");
     const pageIndex = Number(button.getAttribute("page-index"));
-    if (pageIndex == currentPage) {
+    if (pageIndex === currentPage) {
       button.classList.add("active");
     }
   });
@@ -87,15 +83,15 @@ const setCurrentPage = (pageNum, pageCount, listItems) => {
 
 const handlePrevButtonClick = (pageCount, listItems) => {
   setCurrentPage(currentPage - 1, pageCount, listItems);
-}
+};
 
 const handleNextButtonClick = (pageCount, listItems) => {
   setCurrentPage(currentPage + 1, pageCount, listItems);
-}
+};
 
 const handlePaginationNumberClick = (pageIndex, pageCount, listItems) => {
   setCurrentPage(pageIndex, pageCount, listItems);
-}
+};
 
 const paginate = () => {
   listItems = paginatedList.querySelectorAll(".list-item");
@@ -119,13 +115,7 @@ window.addEventListener("load", () => {
   paginate();
 });
 
-// 
-// 
-//
 // Search and Filter
-// 
-// 
-// 
 
 const searchInput = document.getElementById("search-input");
 const filterSelect = document.getElementById("filter-select");
@@ -135,9 +125,7 @@ const noResultsMessContainer = document.getElementById("no-results-message");
 
 // Get unique values ​​of professions
 const professions = Array.from(new Set(doctorsData.map(doctor => doctor.speciality)))
-  .sort((a, b) => a.localeCompare(b, 'en', {
-    ignorePunctuation: true
-  }));
+  .sort((a, b) => a.localeCompare(b, 'en', { ignorePunctuation: true }));
 
 // Add options to the drop-down list
 professions.forEach(profession => {
