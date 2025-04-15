@@ -806,3 +806,66 @@ background-color: #f9f9f9;
         font-size: 14px;
     }
 }
+
+  /*  */
+  /*  */
+  /*  */
+
+  .platform-wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1rem;
+  }
+  
+  .platform-title {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .platform-content {
+    display: flex;
+    gap: 2rem;
+    align-items: flex-start;
+    flex-wrap: wrap; 
+  }
+  
+  .poster {
+    max-width: 100%;
+    width: 400px;
+    flex-shrink: 0;
+  }
+  
+  .platform-text {
+    flex: 1;
+    min-width: 250px;
+  }
+  
+  .platform-text ul {
+    list-style-position: inside;
+    padding-left: 1rem;
+  }
+  
+  .platform-text li {
+    margin-bottom: 0.5rem;
+  }
+  
+  @media (max-width: 768px) {
+    .platform-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .poster {
+      width: 100%;
+      max-width: 100%;
+    }
+  
+    .platform-text {
+      width: 100%;
+    }
+  
+    .platform-title {
+      font-size: 1.2rem;
+    }
+  }
